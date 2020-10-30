@@ -1,0 +1,29 @@
+<div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="deleteBookForm">
+    <table class="table table-bordered" >
+      <tr>
+        <td>Title</td>
+        <td><input class="form-control" type="text" [ngModel]="currentBook.title" formControlName="title" disabled>
+        </td>
+      </tr>
+      <tr>
+        <td>Author</td>
+        <td><input class="form-control" type="text" formControlName="author" [ngModel]="currentBook.author" disabled>
+        </td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td><input class="form-control" type="text" formControlName="description" [ngModel]="currentBook.description" disabled>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <button class="btn btn-primary mr-2" type="submit">DELETE</button>
+          <button class="btn btn-secondary" routerLink="/books">Cancel</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+</div>

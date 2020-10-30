@@ -1,0 +1,33 @@
+<div class="col-12">
+<!--  <div class="row pt-3">-->
+<div class="pt-3">
+  <p style="float: left">Có {{booksList.length}} cuốn sách </p>
+  <button routerLink="add" class="btn btn-success" style="float: right">Thêm sách mới</button>
+</div>
+<br><br>
+<table class="table">
+  <thead class="thead-light">
+  <tr>
+    <th>#</th>
+    <th>Tên sách</th>
+    <th>Tác giả</th>
+    <th colspan="2">Hành động</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let book of booksList; index as i" >
+    <td>{{i+1}}</td>
+    <td>{{book.title}}</td>
+    <td>{{book.author}}</td>
+    <td>
+      <button [routerLink]="[book.id, 'edit']" class="btn btn-primary">Sửa</button>
+    </td>
+    <td>
+      <button [routerLink]="[book.id,'delete']" class="btn btn-danger">Xoá</button>
+    </td>
+  </tr>
+
+  </tbody>
+</table>
+<!--  </div>-->
+</div>

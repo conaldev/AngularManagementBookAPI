@@ -1,0 +1,38 @@
+<div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="updateBookForm">
+    <table class="table table-bordered" >
+      <tr>
+        <td>Title</td>
+        <td><input class="form-control" type="text" [(ngModel)]="currentBook.title" formControlName="title">
+<!--          <div *ngIf="updateBookForm.get('title').hasError('required') && updateBookForm.touched" class="text-danger">-->
+<!--            field require-->
+<!--          </div>-->
+        </td>
+      </tr>
+      <tr>
+        <td>Author</td>
+        <td><input class="form-control" type="text" formControlName="author" [(ngModel)]="currentBook.author" >
+<!--          <div *ngIf="updateBookForm.get('author').hasError('required') && updateBookForm.touched" class="text-danger">-->
+<!--            field require-->
+<!--          </div>-->
+        </td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td><input class="form-control" type="text" formControlName="description" [(ngModel)]="currentBook.description" >
+<!--          <div *ngIf="updateBookForm.get('description').hasError('required') && updateBookForm.touched" class="text-danger">-->
+<!--            field require-->
+<!--          </div>-->
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <button class="btn btn-primary mr-2" type="submit" [disabled]="updateBookForm.invalid">Update</button>
+          <button class="btn btn-secondary" routerLink="/books">Cancel</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+</div>

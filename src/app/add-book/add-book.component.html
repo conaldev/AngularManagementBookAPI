@@ -1,0 +1,38 @@
+<div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="newBookForm">
+    <table class="table table-bordered">
+      <tr>
+        <td>Title</td>
+        <td><input class="form-control" type="text" formControlName="title">
+          <div *ngIf="newBookForm.get('title').hasError('required') && newBookForm.touched" class="text-danger">
+            field require
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Author</td>
+        <td><input class="form-control" type="text" formControlName="author">
+          <div *ngIf="newBookForm.get('author').hasError('required') && newBookForm.touched" class="text-danger">
+            field require
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td><input class="form-control" type="text" formControlName="description">
+          <div *ngIf="newBookForm.get('description').hasError('required') && newBookForm.touched" class="text-danger">
+            field require
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <button class="btn btn-primary mr-2" type="submit" [disabled]="newBookForm.invalid">Add</button>
+          <button class="btn btn-secondary" routerLink="/books">Cancel</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+</div>
