@@ -17,7 +17,7 @@
   <tbody>
   <tr *ngFor="let book of booksList; index as i" >
     <td>{{i+1}}</td>
-    <td>{{book.title}}</td>
+    <td [routerLink]="[book.id,'detail']">{{book.title}}</td>
     <td>{{book.author}}</td>
     <td>
       <button [routerLink]="[book.id, 'edit']" class="btn btn-primary">Sửa</button>
